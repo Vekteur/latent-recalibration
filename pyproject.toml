@@ -1,0 +1,101 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["moc"]
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[project]
+name = "moc"
+version = "0.0.1"
+description = "Latent Recalibration"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "dask[complete]",
+    "lightning",
+    "matplotlib",
+    "numpy",
+    "omegaconf",
+    "pyro-ppl",
+    "pyyaml",
+    "rich",
+    "scikit-learn",
+    "scipy",
+    "seaborn",
+    "torch",
+    "tqdm",
+    "cpflows @ git+https://github.com/Vekteur/CP-Flow.git@gluonts-dependency",
+]
+
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python"
+]
+
+[project.optional-dependencies]
+test = ["pytest", "pytest-benchmark", "pytest-cov"]
+
+[dependency-groups]
+dev = [
+    "jupyterlab",
+    "ipywidgets",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py", "*_test.py"]
+
+[tool.ruff]
+line-length = 110
+
+[tool.ruff.format]
+quote-style = "single"
+
+[tool.ruff.lint]
+isort.order-by-type = false
+extend-select = [
+  "B",   # flake8-bugbear
+  "I",   # isort
+  "ARG", # flake8-unused-arguments
+  "C4",  # flake8-comprehensions
+  "EM",  # flake8-errmsg
+  "ICN", # flake8-import-conventions
+  "G",   # flake8-logging-format
+  "PGH", # pygrep-hooks
+  "PIE", # flake8-pie
+  "PL",  # pylint
+  "PT",  # flake8-pytest-style
+  "PTH", # flake8-use-pathlib
+  "RET", # flake8-return
+  "RUF", # Ruff-specific
+  "SIM", # flake8-simplify
+  "T20", # flake8-print
+  "UP",  # pyupgrade
+  "YTT", # flake8-2020
+  "EXE", # flake8-executable
+  "NPY", # NumPy specific rules
+  "PD",  # pandas-vet
+]
+ignore = [
+  "PLR09",   # Too many X
+  "PLR2004", # Magic comparison
+  "PT011",
+  "EM101",
+  "G004",
+  "B006",
+  "ARG001",
+  "ARG002",
+  "PLW2901",
+  "EM102",
+  "T201",
+  "PD901",
+  "B023",
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**" = ["T20"]
