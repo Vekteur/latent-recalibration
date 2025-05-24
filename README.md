@@ -10,7 +10,7 @@ This is the repository associated with the paper [Multivariate Latent Recalibrat
 
 ## Datasets
 
-For convenience, all datasets except MEPS are directly provided in this repository. MEPS requires accepting data usage agreements [[1]](https://meps.ahrq.gov/data_stats/download_data/pufs/h181/h181doc.shtml#Data) and [[2]](https://meps.ahrq.gov/data_stats/download_data/pufs/h192/h192doc.shtml#DataA) (see step 3 of the installation). Licenses are detailed [below](#datasets-licenses).
+For convenience, all datasets except MEPS and AFHQ are directly provided in this repository. MEPS requires accepting data usage agreements [[1]](https://meps.ahrq.gov/data_stats/download_data/pufs/h181/h181doc.shtml#Data) and [[2]](https://meps.ahrq.gov/data_stats/download_data/pufs/h192/h192doc.shtml#DataA) (see step 3 of the installation). Licenses are detailed [below](#dataset-licenses).
 
 ## Example usage
 
@@ -117,7 +117,7 @@ Then, plots and tables can be generated using `analysis_lr.ipynb`.
 
 Other figures can be generated using `visualizations_lr.ipynb`.
 
-## Dataset Licenses
+## Dataset licenses
 
 This project utilizes data from various sources, each with its own licensing terms. The table below details the origin and license for each dataset.
 
